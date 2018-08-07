@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:hsqldb:file:database/main/db
+    username: sa
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.HSQLDialect
+        event:
+          merge:
+            entity_copy_observer: allow
+    hibernate:
+      ddl-auto: update
+server:
+  port: ${port:8080}

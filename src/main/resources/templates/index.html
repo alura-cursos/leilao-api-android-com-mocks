@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Api de leilões públicos</title>
+</head>
+<body>
+<h1 align="center">Api de leilões públicos</h1>
+
+<h2>Cadastre o leilão</h2>
+<form th:action="@{/leilao/form}" method="post">
+    <input type="text" placeholder="Descrição" th:name="descricao"/>
+    <button>Cadastrar</button>
+</form>
+
+<div th:if="${!leiloes.isEmpty()}">
+    <h2>Todos os leilões</h2>
+    <div th:each="leilao : ${leiloes}">
+        <p th:text="${leilao}"/>
+    </div>
+</div>
+
+</body>
+</html>
