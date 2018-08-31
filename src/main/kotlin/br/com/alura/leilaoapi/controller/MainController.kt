@@ -1,6 +1,5 @@
 package br.com.alura.leilaoapi.controller
 
-import br.com.alura.leilaoapi.model.Leilao
 import br.com.alura.leilaoapi.service.LeilaoService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping

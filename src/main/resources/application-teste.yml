@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:db-teste
+server:
+  port: ${port:8081}

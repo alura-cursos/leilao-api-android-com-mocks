@@ -10,12 +10,10 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
 
-private const val ERRO_GENERICO = "Não foi possível propor o lance"
-
 @RestController
 @RequestMapping("leilao")
 class LeilaoController(
-        val service: LeilaoService) {
+        private val service: LeilaoService) {
 
     @PutMapping("{id}/lance")
     fun propoeLance(@PathVariable("id") id: Long, @RequestBody lance: Lance): ResponseEntity<Any> {
@@ -40,7 +38,7 @@ class LeilaoController(
     }
 
     @PostMapping("form")
-    fun novoLeilao(leilao: Leilao): ModelAndView {
+    fun novo(leilao: Leilao): ModelAndView {
         ResponseEntity.ok(service.salva(leilao))
         return ModelAndView("redirect:/")
     }
